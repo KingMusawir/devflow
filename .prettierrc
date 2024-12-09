@@ -5,6 +5,8 @@
   "semi": true,
   "singleQuote": true,
   "bracketSpacing": true,
-  "tailwindAttributes": ["className", "tw", "clsx"],
-  "tailwindFunctions": ["clsx", "cn"]
+  "jsxSingleQuote": false,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "htmlWhitespaceSensitivity": "css"
 }
