@@ -4,6 +4,7 @@ const ROUTES = {
   SIGN_IN: '/sign-in',
   PROFILE: (id: string) => `/profile/${id}`,
   TAGS: (id: string) => `/tags/${id}`,
+  QUESTION: (id: string) => `/question/${id}`,
   ASK_QUESTION: '/ask-question',
   // FORGOT_PASSWORD: '/forgot-password',
   // RESET_PASSWORD: '/reset-password',
