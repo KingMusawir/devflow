@@ -43,13 +43,5 @@
         "no-undef": "off"
       }
     }
-  ],
-  "overides": [
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "no-undef": "off"
-      }
-    }
   ]
 }

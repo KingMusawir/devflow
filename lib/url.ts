@@ -18,6 +18,7 @@ export const formUrlQuery = ({ params, key, value }: UrlQueryParams) => {
     query: queryString,
   });
 };
+
 export const removeKeysFromQuery = ({
   params,
   keysToRemove,

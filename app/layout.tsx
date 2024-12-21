@@ -47,7 +47,7 @@ const RootLayout = async ({
       </head>
       <SessionProvider session={session}>
         <body
-          className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+          className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
         >
           <ThemeProvider
             attribute="class"

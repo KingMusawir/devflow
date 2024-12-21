@@ -17,9 +17,9 @@ const LocalSearch = ({ route, imgSrc, placeholder, otherClasses }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const query = searchParams.get('query');
+  const query = searchParams.get('query') || '';
 
-  const [searchQuery, setSearchQuery] = useState(query || '');
+  const [searchQuery, setSearchQuery] = useState(query);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
