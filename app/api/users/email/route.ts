@@ -9,7 +9,7 @@ import { APIErrorResponse } from '@/types/global';
 export async function POST(request: Request) {
   const { email } = await request.json();
   try {
-    const validateUser = await UserSchema.partial().safeParse({ email });
+    const validateUser = UserSchema.partial().safeParse({ email });
 
     if (!validateUser.success)
       throw new ValidationError(validateUser.error.flatten().fieldErrors);
