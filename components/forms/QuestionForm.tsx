@@ -1,9 +1,14 @@
 'use client';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+import { MDXEditorMethods } from '@mdxeditor/editor';
+import dynamic from 'next/dynamic';
 import React, { useRef } from 'react';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { AskQuesionSchema } from '@/lib/validations';
+import { z } from 'zod';
+
+import TagCard from '@/components/cards/TagCard';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -14,12 +19,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import dynamic from 'next/dynamic';
-import { MDXEditorMethods } from '@mdxeditor/editor';
-
-import { z } from 'zod';
-import TagCard from '@/components/cards/TagCard';
+import { AskQuestionSchema } from '@/lib/validations';
 
 const Editor = dynamic(() => import('@/components/editor'), {
   ssr: false,
@@ -27,8 +27,8 @@ const Editor = dynamic(() => import('@/components/editor'), {
 
 const QuestionForm = () => {
   const editorRef = useRef<MDXEditorMethods>(null);
-  const form = useForm<z.infer<typeof AskQuesionSchema>>({
-    resolver: zodResolver(AskQuesionSchema),
+  const form = useForm<z.infer<typeof AskQuestionSchema>>({
+    resolver: zodResolver(AskQuestionSchema),
     defaultValues: {
       title: '',
       content: '',
@@ -74,7 +74,7 @@ const QuestionForm = () => {
     }
   };
 
-  const handleCreateQuestion = (data: z.infer<typeof AskQuesionSchema>) => {
+  const handleCreateQuestion = (data: z.infer<typeof AskQuestionSchema>) => {
     console.log(data);
   };
 

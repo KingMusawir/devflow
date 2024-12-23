@@ -1,5 +1,6 @@
 import React from 'react';
-import QuestonForm from '@/components/forms/QuestonForm';
+
+import QuestionForm from '@/components/forms/QuestionForm';
 
 const AskQuestions = () => {
   return (
@@ -7,7 +8,7 @@ const AskQuestions = () => {
       <h1 className="h1-bold text-dark100_light900">Ask a question</h1>
 
       <div className="mt-9">
-        <QuestonForm />
+        <QuestionForm />
       </div>
     </div>
   );

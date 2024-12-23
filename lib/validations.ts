@@ -49,7 +49,7 @@ export const SignUpSchema = z.object({
     }),
 });
 
-export const AskQuesionSchema = z.object({
+export const AskQuestionSchema = z.object({
   title: z
     .string()
     .min(1, { message: 'Title is required.' })
@@ -64,4 +64,39 @@ export const AskQuesionSchema = z.object({
     )
     .min(1, { message: 'At least one tag is required.' })
     .max(3, { message: 'You can add up to 3 tags.' }),
+});
+
+export const UserSchema = z.object({
+  name: z
+    .string()
+    .min(1, { message: 'Name is required.' })
+    .max(50, { message: 'Name cannot exceed 50 characters.' })
+    .regex(/^[a-zA-Z\s]+$/, {
+      message: 'Name can only contain letters and spaces.',
+    }),
+  username: z
+    .string()
+    .min(3, { message: 'Username must be at least 3 characters long.' })
+    .max(30, { message: 'Username cannot exceed 30 characters.' })
+    .regex(/^[a-zA-Z0-9_]+$/, {
+      message: 'Username can only contain letters, numbers, and underscores.',
+    }),
+  email: z
+    .string()
+    .min(1, { message: 'Email is required.' })
+    .email({ message: 'Please provide a valid email address.' }),
+  bio: z
+    .string()
+    .max(160, { message: 'Bio cannot exceed 160 characters.' })
+    .optional(),
+  image: z.string().url({ message: 'Please provide a valid URL.' }).optional(),
+  location: z
+    .string()
+    .max(30, { message: 'Location cannot exceed 30 characters.' })
+    .optional(),
+  portfolio: z
+    .string()
+    .url({ message: 'Please provide a valid URL.' })
+    .optional(),
+  reputation: z.number().optional(),
 });
