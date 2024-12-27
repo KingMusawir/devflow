@@ -7,6 +7,7 @@ import dbConnect from '@/lib/mongoose';
 import { UserSchema } from '@/lib/validations';
 import { APIErrorResponse } from '@/types/global';
 
+// Get all users
 export async function GET() {
   try {
     await dbConnect();
@@ -25,7 +26,7 @@ export async function GET() {
   }
 }
 
-// Create user
+// Create user DataBase
 export async function POST(request: Request) {
   try {
     await dbConnect();

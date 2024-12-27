@@ -125,3 +125,16 @@ export const AccountSchema = z.object({
     .string()
     .min(1, { message: 'Provider account ID is required' }),
 });
+
+export const SIgnInWithOauthSchema = z.object({
+  provider: z.string().min(1, { message: 'Provider is required' }),
+  providerAccountId: z
+    .string()
+    .min(1, { message: 'Provider account ID is required' }),
+  user: z.object({
+    name: z.string().min(1, { message: 'Name is required' }),
+    username: z.string().min(3, { message: 'Username is required' }),
+    email: z.string().email({ message: 'Invalid email address' }),
+    image: z.string().url({ message: 'Invalid image URL' }).optional(),
+  }),
+});

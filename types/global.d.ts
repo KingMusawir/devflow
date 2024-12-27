@@ -32,6 +32,7 @@ type ActionResponse<T = null> = {
   status?: number;
 };
 
+// Base on the ActionResponse type, we can create different types of responses:
 type SuccessResponse<T> = ActionResponse<T> & {
   success: true;
 };

@@ -42,7 +42,7 @@ export async function POST(request: Request) {
       throw new ForbiddenError('An account with the same already exists');
     }
 
-    const newAccount = await Account.create(validatedAccount);
+    const newAccount = await Account.create(validatedAccount.data);
 
     return NextResponse.json(
       {
