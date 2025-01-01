@@ -1,9 +1,11 @@
-import React from 'react';
-import { getTimeStamp } from '@/lib/utils';
 import Link from 'next/link';
-import ROUTES from '@/constants/routes';
+import React from 'react';
+
 import TagCard from '@/components/cards/TagCard';
 import Metrics from '@/components/Metrics';
+import ROUTES from '@/constants/routes';
+import { getTimeStamp } from '@/lib/utils';
+import { Question, Tag } from '@/types/global';
 
 interface Props {
   question: Question;

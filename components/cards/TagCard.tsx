@@ -1,10 +1,10 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import ROUTES from '@/constants/routes';
 import { getDeviconClassName } from '@/lib/utils';
-import Image from 'next/image';
 
 interface Props {
   _id: string;
@@ -14,7 +14,7 @@ interface Props {
   compact?: boolean;
   remove?: boolean;
   isButton?: boolean;
-  handleRemove: () => void;
+  handleRemove?: () => void;
 }
 
 const TagCard = ({
